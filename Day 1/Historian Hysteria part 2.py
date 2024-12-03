@@ -38,12 +38,16 @@ def sort_right(right_list):
 
     print("Sorted right list:", right_list)
 
-def similarity(left_list, right_list):
-    sim_score = 0
-    for item in left_list:
+# Similarity score is calculated by number of occurance in the right list of each number in the left list,
+# Multiplied by the actual number of said left list
+def similarity(left_list, right_list): 
+    sim_score = 0 
+    for item in left_list: # For each number in the left list...
         occurance = 0
-        occurance += right_list.count(item)
-        sim_score += int(item) * occurance
+        occurance += right_list.count(item) # count the number of times item(number in left list) occurs in the right list (Which returns an integer)
+        # adds that integer into the occurance counter
+        sim_score += int(item) * occurance # Calculates Sim score for that number
+        # Resets and repeats for each number in the left list
     print(sim_score)
 
 # Call the functions
