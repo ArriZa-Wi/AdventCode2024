@@ -1,6 +1,6 @@
 def input_reader():
     report = []
-    with open("Input2024Day2.txt") as file:
+    with open('Day 2/Input2024Day2.txt') as file:
         for line in file:
             report_value = []
             for item in line.strip().split(): # First, the line is splitting each item by identifying the spaces, and turns each item into its own seperate list. 
@@ -20,9 +20,20 @@ def safety(report):
         if item[0] not in item[1:]:
     # This checks if item[0] is not equal to any of the remaining elements.
     # if item[0] != item[1, len(item)]: is incorrect
-            for subitem in item:
-                
-
-        
+            for subitem in range(len(item)-1):
+                nth = item[subitem]
+                second_nth = item[subitem+1]
+                difference = abs(int(nth) - int(second_nth))
+                if difference in [1, 2, 3]:
+                    subitem_safe = 1
+                else:
+                    subitem_safe = 0
+                    break
+                if subitem_safe == 1:
+                    safe_count += 1
+        else:
+            break
+    print(safe_count)
 
 report = input_reader()
+safety(report)
