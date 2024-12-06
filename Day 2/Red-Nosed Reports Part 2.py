@@ -6,7 +6,7 @@ def input_reader():
             report.append(report_value)
     return report
 
-
+# Create a separate function that checks whether each line (aka item) is safe.
 def is_safe(levels):
     """Check if a report is safe based on the original rules."""
     increasing = True
