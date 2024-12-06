@@ -1,6 +1,6 @@
 import re
 
-def analyze_memory(file_path):
+def analyze_memory():
     """
     Reads a file containing corrupted memory, extracts valid mul instructions, 
     and computes the sum of their results.
@@ -23,11 +23,7 @@ def analyze_memory(file_path):
         
     # Compute the sum of the results of valid mul instructions
     result_sum = sum(int(x) * int(y) for x, y in matches)
-        
-    return result_sum
 
+    print(result_sum)
 
-# Example usage:
-file_path = "corrupted_memory.txt"  # Replace with your file path
-result = analyze_memory(file_path)
-print(f"The sum of the results of valid mul instructions is: {result}")
+analyze_memory()
